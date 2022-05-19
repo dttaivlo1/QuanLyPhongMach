@@ -22,7 +22,7 @@ namespace QuanLyPhongMach
         private void FrmChinh_Load(object sender, EventArgs e)
         {
             //#region Nhạc khởi động form
-            //System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"C:\WINDOWS\MEDIA\Windows XP Startup.wav");
+            // System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"C:\WINDOWS\MEDIA\Windows XP Startup.wav");
             //sp.Play();
             //#endregion            
         }
@@ -136,7 +136,9 @@ namespace QuanLyPhongMach
 
         private void xemDanhSáchĐơnThuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TraCuuDonThuoc tracuudonthuoc = new TraCuuDonThuoc();
+            tracuudonthuoc.ShowDialog();
         }
     }
 }
+

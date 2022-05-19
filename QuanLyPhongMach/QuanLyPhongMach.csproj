@@ -136,6 +136,9 @@
       <DependentUpon>TraCuuDanhSachBenhNhanDaDieuTri.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuDonThuoc.resx">
+      <DependentUpon>TraCuuDonThuoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TraCuuThongTinBacSi.resx">
       <DependentUpon>TraCuuThongTinBacSi.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -154,6 +157,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QuanLyPhongMachDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyPhongMachDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SapGiuongBenh.cs">
       <SubType>Form</SubType>
@@ -217,6 +225,17 @@
   <ItemGroup>
     <Content Include="Images\bed_number_1.bmp" />
     <Content Include="Images\patient.bmp" />
+    <None Include="QuanLyPhongMachDataSet.xsc">
+      <DependentUpon>QuanLyPhongMachDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyPhongMachDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyPhongMachDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyPhongMachDataSet.xss">
+      <DependentUpon>QuanLyPhongMachDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Accessibility.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
