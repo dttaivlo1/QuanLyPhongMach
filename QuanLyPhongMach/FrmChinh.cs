@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using DTO;
 
 namespace QuanLyPhongMach
@@ -24,11 +25,11 @@ namespace QuanLyPhongMach
             //System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"C:\WINDOWS\MEDIA\Windows XP Startup.wav");
             //sp.Play();
             //#endregion            
-        }        
+        }
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DangNhap dangnhap = new DangNhap();            
+            DangNhap dangnhap = new DangNhap();
 
             if (dangnhap.ShowDialog() == DialogResult.OK)
             {
@@ -39,7 +40,7 @@ namespace QuanLyPhongMach
                 this.đăngNhậpToolStripMenuItem.Visible = false;
                 this.đơnThuốcToolStripMenuItem.Enabled = true;
 
-                this.label1.Visible = true;                
+                this.label1.Visible = true;
 
                 this.lbbacsidangnhap.Text = dangnhap.BS.TenBacSi;
                 BSi.TenBacSi = dangnhap.BS.TenBacSi;
@@ -93,7 +94,7 @@ namespace QuanLyPhongMach
         {
             frmThemDonThuoc themdonthuoc = new frmThemDonThuoc();
             themdonthuoc.ShowDialog();
-        }       
+        }
 
         private void traCứuToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -131,6 +132,11 @@ namespace QuanLyPhongMach
         {
             frmThemBacSi thembacsi = new frmThemBacSi();
             thembacsi.ShowDialog();
+        }
+
+        private void xemDanhSáchĐơnThuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

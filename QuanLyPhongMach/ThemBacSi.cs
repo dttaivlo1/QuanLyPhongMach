@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using BUS;
+
 using DTO;
 
 namespace QuanLyPhongMach
@@ -35,6 +37,11 @@ namespace QuanLyPhongMach
 
             BacSiBUS.InsertBacSi(bacsi);
             this.label7.Visible = true;
+        }
+
+        private void frmThemBacSi_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

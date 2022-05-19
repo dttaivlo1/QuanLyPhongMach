@@ -19,7 +19,7 @@ namespace QuanLyPhongMach
 
         public ThemBenhNhan()
         {
-            
+
             InitializeComponent();
         }
 
@@ -35,11 +35,11 @@ namespace QuanLyPhongMach
         private void CreateListView()
         {
             listView1.Columns.Add("", 0);
-            listView1.Columns.Add("Họ Tên Bệnh Nhân",150, HorizontalAlignment.Center);
-            listView1.Columns.Add("Số CMND",80, HorizontalAlignment.Center);
-            listView1.Columns.Add("Địa Chỉ",140, HorizontalAlignment.Center);
-            listView1.Columns.Add("Giới Tính",80, HorizontalAlignment.Center);
-            listView1.Columns.Add("Ngày Khám",100, HorizontalAlignment.Center);
+            listView1.Columns.Add("Họ Tên Bệnh Nhân", 150, HorizontalAlignment.Center);
+            listView1.Columns.Add("Số CMND", 80, HorizontalAlignment.Center);
+            listView1.Columns.Add("Địa Chỉ", 140, HorizontalAlignment.Center);
+            listView1.Columns.Add("Giới Tính", 80, HorizontalAlignment.Center);
+            listView1.Columns.Add("Ngày Khám", 100, HorizontalAlignment.Center);
             listView1.Columns.Add("Bác sĩ Điều Trị", 150, HorizontalAlignment.Center);
             listView1.Columns.Add("Loại Bệnh Nhân", 110, HorizontalAlignment.Center);
         }
@@ -63,7 +63,7 @@ namespace QuanLyPhongMach
         {
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty)
             {
-                this.label8.Text=string.Empty;
+                this.label8.Text = string.Empty;
 
                 BenhNhanDTO BenhNhan = new BenhNhanDTO();
 
@@ -85,7 +85,7 @@ namespace QuanLyPhongMach
                 lvItem.SubItems.Add(BenhNhan.CMND.ToString());
                 lvItem.SubItems.Add(BenhNhan.DiaChi);
                 lvItem.SubItems.Add(BenhNhan.GioiTinh);
-               
+
                 lvItem.SubItems.Add(BenhNhan.NgayKham.ToString());
 
                 if (BenhNhan.BacSiPhuTrach == 1)
@@ -110,7 +110,7 @@ namespace QuanLyPhongMach
             {
                 MessageBox.Show("Thông Tin Chưa Đầy Đủ...", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }        
+        }
 
         private void btThoat_Click(object sender, EventArgs e)
         {
@@ -123,15 +123,15 @@ namespace QuanLyPhongMach
             {
                 if (this.rbBenhNhanThuong.Checked == true)
                 {
-                    BenhNhanBUS.Insert_BenhNhanThuong(benhnhan);                    
+                    BenhNhanBUS.Insert_BenhNhanThuong(benhnhan);
                 }
                 else
                 {
                     BenhNhanBUS.Insert_BenhNhanNamVien(benhnhan);
                     this.button1.Visible = true;
-                }                    
-            }            
-            
+                }
+            }
+
             foreach (ListViewItem item in List_Items_Added)
             {
                 item.Remove();
@@ -151,6 +151,8 @@ namespace QuanLyPhongMach
             SapGiuongBenh frm = new SapGiuongBenh();
             this.Close();
             frm.ShowDialog();
-        }                     
+        }
+
+
     }
 }

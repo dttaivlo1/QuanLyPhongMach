@@ -40,7 +40,7 @@ namespace QuanLyPhongMach
         private void DragDrop_Control()
         {
             #region event textbox
-            //   this.dataGridView1.MouseDown += new MouseEventHandler(dataGridView1_MouseDown);
+            this.dataGridView1.MouseDown += new MouseEventHandler(dataGridView1_MouseDown);
 
             this.textBox1.DragEnter += new DragEventHandler(textBox1_DragEnter);
             this.textBox1.DragDrop += new DragEventHandler(textBox1_DragDrop);
@@ -552,11 +552,24 @@ namespace QuanLyPhongMach
                 this.lb7sttBN.Text = string.Empty;
             }
         }
-        #endregion        
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        #endregion
+
+        private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                DataGridView.HitTestInfo info = dataGridView1.HitTest(e.X, e.Y);
+                if (info.RowIndex >= 0)
+                {
+                    if (info.RowIndex >= 0 && info.ColumnIndex >= 0)
+                    {
+                        string text = Convert.ToString(dataGridView1.Rows[info.RowIndex].Cells[info.ColumnIndex].Value);
+                        if (text != null)
+                            dataGridView1.DoDragDrop(text, DragDropEffects.Copy);
+                    }
+                }
+            }
         }
     }
 }
